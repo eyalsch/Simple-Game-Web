@@ -1,0 +1,13 @@
+<html>
+<title>Simple Game</title>
+<body>
+<pre><b><big><big><big><big><big>
+    <div id=S></div>
+
+	<div id=O></div>
+<script>
+function DB(){O.innerHTML="["+("--------"+B).slice(-8)+"]\n    "+V}function SG(){Sc=0,B="",H=localStorage.getItem("S"),S.innerHTML="Score:"+Sc+" High Score:"+H,DB(),bindKey(),D=1500,C=0,i=setInterval(loop,D)}function loop(){8==B.length?(clearInterval(i),onkeydown=function(){},Sc>H?(O.innerHTML="NEW HIGH SCORE!",localStorage.setItem("S",Sc)):O.innerHTML="Game Over"):(B+=10*Math.random()|"0",DB(),++C%20==0&&(D-=100,i=setInterval(loop,D)))}function Blow(){0<B.length&&B[0]-"0"==V&&(B=B.substring(1,B.length),DB(),Sc+=8-B.length,S.innerHTML="Score:"+Sc+" High Score:"+H)}function bindKey(){onkeydown=function(e){switch(e.keyCode){case 38:V=9==V?0:V+1;break;case 40:V=0==V?9:V-1;break;case 32:Blow();break;case 8:SG()}DB()}}H=Sc=V=C=i=D=0,B="",SG();
+</script>
+</body>
+</html>
+
